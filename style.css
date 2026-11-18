@@ -1,0 +1,647 @@
+
+/* =========================================
+   1. GENERAL STYLING
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* COLOR PALETTE */
+
+:root {
+    --dark: #17110D;
+    --espresso: #382319;
+    --brown: #75462D;
+    --rust: #BC492F;
+    --orange: #D47732;
+    --amber: #D9A044;
+    --cream: #F0D9B5;
+    --light: #F6EBDD;
+    --text: #3B281E;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-image:
+        linear-gradient(
+            rgba(23, 17, 13, 0.64),
+            rgba(23, 17, 13, 0.64)
+        ),
+        url("images/ruzol-background.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    color: var(--text);
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   2. HEADER AND NAVIGATION
+========================================= */
+
+header {
+    background:
+        linear-gradient(
+            rgba(23, 17, 13, 0.48),
+            rgba(23, 17, 13, 0.48)
+        ),
+        url("273834.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: var(--cream);
+    padding: 20px 8%;
+}
+
+/* NAVIGATION BAR */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    animation: slideDown 0.8s ease;
+}
+
+/* LOGO */
+
+.logo {
+    color: var(--amber);
+    font-size: 22px;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--cream);
+    transform: scale(1.05);
+}
+
+/* NAVIGATION LINKS */
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.navbar ul li a {
+    position: relative;
+    display: inline-block;
+
+    color: var(--cream);
+    text-decoration: none;
+    padding: 8px 0;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* ANIMATED UNDERLINE */
+
+.navbar ul li a::after {
+    content: "";
+    position: absolute;
+
+    width: 0;
+    height: 3px;
+
+    background-color: var(--amber);
+
+    left: 0;
+    bottom: 0;
+
+    transition: width 0.3s ease;
+}
+
+/* NAVIGATION HOVER EFFECT */
+
+.navbar ul li a:hover {
+    color: var(--orange);
+    transform: translateY(-4px);
+}
+
+.navbar ul li a:hover::after {
+    width: 100%;
+}
+
+/* NAVIGATION ENTRANCE ANIMATION */
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   3. HELLO / HERO SECTION
+========================================= */
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 90px 0;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+/* INTRODUCTION TEXT */
+
+.greeting {
+    color: var(--amber);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    color: var(--cream);
+    font-size: 42px;
+    margin: 15px 0;
+}
+
+.hero h3 {
+    color: var(--orange);
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    color: var(--cream);
+}
+
+/* PROFILE IMAGE */
+
+.hero-image {
+    flex: 0 0 280px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+
+    border-radius: 12px;
+    border: 4px solid var(--amber);
+
+    transition: transform 0.3s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.03);
+}
+
+/* HERO BUTTON */
+
+.btn {
+    display: inline-block;
+
+    margin-top: 25px;
+    padding: 12px 25px;
+
+    background-color: var(--rust);
+    color: var(--cream);
+
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--amber);
+    color: var(--dark);
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   4. MAIN CONTENT SECTIONS
+========================================= */
+
+.content-section {
+    padding: 65px 10%;
+    background-color: var(--light);
+}
+
+/* SECTION HEADINGS */
+
+.content-section h2 {
+    color: var(--espresso);
+    font-size: 30px;
+    margin-bottom: 20px;
+
+    border-left: 5px solid var(--rust);
+    padding-left: 15px;
+}
+
+/* SUBHEADINGS */
+
+.content-section h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: var(--brown);
+}
+
+/* PARAGRAPHS */
+
+.content-section p {
+    text-align: justify;
+    max-width: 1000px;
+}
+
+/* ALTERNATE BACKGROUND */
+
+.alternate {
+    background-color: var(--cream);
+
+  
+}
+
+
+/* =========================================
+   5. FAVORITES TABLE
+========================================= */
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 25px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--light);
+}
+
+th,
+td {
+    border: 1px solid #C9B69A;
+    padding: 14px;
+    text-align: left;
+}
+
+/* TABLE HEADER */
+
+th {
+    background-color: var(--espresso);
+    color: var(--cream);
+}
+
+/* TABLE HOVER EFFECT */
+
+tr {
+    transition: background-color 0.3s ease;
+}
+
+tr:hover {
+    background-color: #E5D1B5;
+}
+
+
+/* =========================================
+   6. SKILLS LIST
+========================================= */
+
+.skills-list {
+    margin-left: 25px;
+    margin-top: 15px;
+}
+
+.skills-list li {
+    padding: 5px;
+}
+
+.skills-list li::marker {
+    color: var(--rust);
+}
+
+
+/* =========================================
+   7. FOOTER
+========================================= */
+
+footer {
+    background-color: var(--dark);
+    color: var(--cream);
+
+    text-align: center;
+    padding: 30px 15px;
+}
+
+/* FOOTER LINKS */
+
+footer a {
+    color: var(--amber);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--cream);
+    text-decoration: underline;
+}
+
+/* SOURCES */
+
+.sources {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #BDA98B;
+}
+
+/* COPYRIGHT */
+
+.copyright {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #A9977D;
+}
+
+
+/* =========================================
+   FLEXBOX IMAGE GALLERIES
+========================================= */
+
+.image-gallery,
+/* Horizontal Favorite Bands Layout */
+.favorite-gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+/* Individual Band Cards */
+.favorite-card {
+    flex: 1 1 280px;
+    max-width: 350px;
+    min-width: 0;
+}
+
+.favorite-card .spotify-embed {
+    width: 100%;
+}
+.favorite-card .spotify-embed iframe {
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+}
+
+
+.image-gallery img {
+    flex: 1 1 220px;
+    max-width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: 3px solid var(--amber);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover,
+.favorite-card:hover {
+    transform: translateY(-5px);
+}
+
+.favorite-card {
+    flex: 1 1 220px;
+    max-width: 280px;
+    padding: 15px;
+    background-color: var(--light);
+    border: 1px solid #C9B69A;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.favorite-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 3px solid var(--amber);
+    border-radius: 7px;
+}
+
+.favorite-card h3 {
+    margin: 12px 0 6px;
+    color: var(--espresso);
+}
+
+.favorite-card p {
+    text-align: center;
+    font-size: 14px;
+}
+
+/* =========================================
+   8. MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* HEADER */
+
+    header {
+        padding: 20px 5%;
+        background-position: center;
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar ul {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    /* HERO SECTION */
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 50px 0;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-image {
+        width: 220px;
+        flex: none;
+    }
+
+    .hero-image img {
+        height: 250px;
+    }
+
+    /* FLEXBOX GALLERIES */
+
+    .image-gallery img,
+    .favorite-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    /* CONTENT SECTIONS */
+
+    .content-section {
+        padding: 45px 7%;
+    }
+
+    .content-section h2 {
+        font-size: 25px;
+    }
+}
+
+
+/* =========================================
+   9. REDUCED MOTION ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+  
+  
+.spotify-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 25px auto;
+    padding: 10px;
+    background-color: var(--cream);
+    border: 2px solid var(--brown);
+    border-radius: 15px;
+    box-shadow: 5px 5px 0 var(--espresso);
+}
+
+  
+
+}
+
+
+/* STACK FAVORITE BANDS VERTICALLY */
+#favorite-bands .favorite-gallery {
+    display: flex !important;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+    overflow: visible;
+}
+
+#favorite-bands .favorite-card {
+    width: 100%;
+    max-width: 600px;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+#favorite-bands .spotify-embed,
+#favorite-bands .spotify-embed iframe {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* UNIFIED DARK BACKGROUND TREATMENT FOR ALL CONTENT SECTIONS */
+.content-section,
+.content-section.alternate {
+    background: rgba(23, 17, 13, 0.48);
+    color: var(--cream);
+}
+
+/* Keep section text readable against the background image */
+.content-section h2 {
+    color: var(--cream);
+    border-left-color: var(--amber);
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.95);
+    font-family: 'Audiowide', 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    letter-spacing: 1px;
+    line-height: 1.35;
+}
+
+.content-section h3 {
+    color: var(--amber);
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.95);
+}
+
+.content-section p,
+.content-section li,
+.content-section label {
+    color: var(--cream);
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.95);
+}
+
+/* Preserve contrast inside cards and tables */
+.favorite-card,
+.favorite-card h3,
+.favorite-card p,
+.table-container,
+table,
+table td {
+    color: var(--text);
+    text-shadow: none;
+}
+
+.favorite-card {
+    background-color: var(--light);
+}
+
+.favorite-card h3 {
+    color: var(--espresso);
+}
+
+.favorite-card p {
+    color: var(--text);
+}
+
+/* Retro 2000s display font for section headings.
+   If Google Fonts is unavailable, the fallback fonts are used. */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+@media (max-width: 768px) {
+    .content-section h2 {
+        font-size: 24px;
+        letter-spacing: 0.5px;
+    }
+}
